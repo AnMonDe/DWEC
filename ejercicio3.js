@@ -6,5 +6,5 @@ const mostrarSuma = () => {
         suma += i;
     }
     let resultado = document.getElementById("resultado")
-    resultado.innerHTML=`La suma de los números desde 1 hasta ${numero} es: ${suma}`;
+    resultado.innerHTML=`La suma de los números del 1 al ${numero} es ${suma}`;
 }
