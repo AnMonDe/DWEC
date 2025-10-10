@@ -10,10 +10,10 @@ const mostrarSuma = () =>{
     const cantidad = array.length;
 
     if (totalAcumulado > 100){
-        resultado.innerHTML = `¡Suma total superada! <br>
-        Total acumulado: ${totalAcumulado}. Números introducidos: ${cantidad}`
+        resultado.innerHTML = `<h2>¡Suma total superada! <br>
+        Total acumulado: ${totalAcumulado}. Números introducidos: ${cantidad}</h2>`
     } else {
-        resultado.innerHTML = `Suma actual: ${totalAcumulado}.`
+        resultado.innerHTML = `<h2>Suma actual: ${totalAcumulado}.</h2>`
     }
     valorImput.value = '';
 }

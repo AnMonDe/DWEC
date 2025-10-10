@@ -3,13 +3,13 @@ const mostrarSuma = () => {
     const numero = Number(document.getElementById('numero').value);
     let suma = 0;
     if (isNaN(numero)){
-        alert("Por favor, introduce un número válido.");
+        alert("Por favor, introduce un número.");
         return;
     } else {for (let i = 1; i <= numero; i++) {
         suma += i;
     }
     }
     let resultado = document.getElementById("resultado");
-    resultado.innerHTML=`La suma de los números del 1 al ${numero} es ${suma}`;
+    resultado.innerHTML=`<h2>La suma de los números del 1 al ${numero} es ${suma}</h2>`;
     document.getElementById('numero').value = '';
 }
