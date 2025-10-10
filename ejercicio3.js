@@ -8,7 +8,8 @@ const mostrarSuma = () => {
     } else {for (let i = 1; i <= numero; i++) {
         suma += i;
     }
-}
-    let resultado = document.getElementById("resultado")
+    }
+    let resultado = document.getElementById("resultado");
     resultado.innerHTML=`La suma de los números del 1 al ${numero} es ${suma}`;
+    document.getElementById('numero').value = '';
 }

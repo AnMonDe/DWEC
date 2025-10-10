@@ -1,6 +1,3 @@
-//2. Crea un documento html que solicite al usuario tres números por separado,
-// y se escriba en el documento cual de los números introducidos es menor.
-
 const mostrarMenor = () => {
     this.event.preventDefault();
     const numero1 = Number(document.getElementById('numero1').value);
@@ -15,6 +12,10 @@ const mostrarMenor = () => {
         menor = numero3;
     }  
     let salida = document.getElementById('resultado');
-    let resultado = `<h2>El ${menor} es el menor.</h2>`;
+    let resultado = `<h2>De los numeros: ${numero1}, ${numero2} y ${numero3}. <br>
+    El ${menor} es el menor.</h2>`;
     salida.innerHTML = resultado;
+    document.getElementById('numero1').value = '';
+    document.getElementById('numero2').value = '';
+    document.getElementById('numero3').value = '';
 }
