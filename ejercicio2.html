@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es-ES"> <!-- Idioma de la pagina-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Andrés Monje Delgado">
-    <title>Tarea 2 Ejercicio 2</title>
-    <script src="ejercicio2.js"></script>
+    <meta charset="UTF-8"> <!-- Codificacion de la pagina-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Formato para que se adapte la pagina a las dimensiones de la pantalla del dispositivo que lo visualiza-->
+    <meta name="author" content="Andrés Monje Delgado"> <!-- Nombre del autor-->
+    <title>Tarea 2 Ejercicio 2</title> <!-- Vinculacion del js externo-->
+    <script src="ejercicio2.js"></script> <!-- Titulo que saldra en la pestaña del navegador-->
 </head>
-<body bgcolor="black" text="white" align="center">
-    <h1>¿Cual es el numero menor?</h1>
-    <form onsubmit="mostrarMenor()">
-        <label for="numero1">Introduce el primer número</label>
-        <input id="numero1" type="number" required/>
+<body bgcolor="black" text="white" align="center"> <!-- Se aplica un poco de estilo al html, no es lo mas recomendable, pero lo justo para no crear un css-->
+    <h1>¿Cual es el numero menor?</h1> <!-- Titulo-->
+    <form onsubmit="mostrarMenor()"> <!-- Ejecuta la funcion-->
+        <label for="numero1">Introduce el primer número</label> <!-- Asocia el texto con un formulario-->
+        <input id="numero1" type="number" required/> <!-- Campo para rellenar el formulario-->
         <br><br>
-        <label for="numero2">Introduce el segundo número</label>
-        <input id="numero2" type="number" required/>
+        <label for="numero2">Introduce el segundo número</label> <!-- Asocia el texto con un formulario-->
+        <input id="numero2" type="number" required/> <!-- Campo para rellenar el formulario-->
         <br><br>
-        <label for="numero3">Introduce el tercer número</label>
-        <input id="numero3" type="number" required/>
+        <label for="numero3">Introduce el tercer número</label> <!-- Asocia el texto con un formulario-->
+        <input id="numero3" type="number" required/> <!-- Campo para rellenar el formulario-->
         <br><br>
-        <input type="submit" value="Resultado" />
-        <div id="resultado">
+        <input type="submit" value="Resultado" /> <!-- Crea un boton para enviar los campos de los formularios-->
+        <div id="resultado"> <!-- Contenedor para visualizar-->
         </div>
     </form>
 </body>
