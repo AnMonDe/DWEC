@@ -4,6 +4,10 @@ let boton_desc = document.getElementById('boton_desc');
 boton_cod.addEventListener('click',()=>{
     let entrada_codificar = document.getElementById('codificar').value;
     let salida_cod = document.getElementById('salida_cod');
+    if (entrada_codificar.match(/\d/)){
+        window.alert("Error, la cadena tiene numeros.")
+        return;
+    }
     let espacios = entrada_codificar.toLowerCase().replaceAll(" ","?");
     let codificado = codificarCadena(espacios);
     salida_cod.innerHTML = codificado;
