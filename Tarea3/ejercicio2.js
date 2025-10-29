@@ -30,5 +30,12 @@ function codificarCadena(str){
 }
 
 function descodificarCadena(str){
-    
+    const regex = /(\d+)(.)|(\D)/g;
+    return str.replace(regex,(match, count, char, singleChar)=>{
+        if (count){
+            return char.repeat(parseInt(count));
+        } else{
+            return singleChar;
+        }
+    });
 }
