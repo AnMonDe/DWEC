@@ -4,13 +4,31 @@ let boton_desc = document.getElementById('boton_desc');
 boton_cod.addEventListener('click',()=>{
     let entrada_codificar = document.getElementById('codificar').value;
     let salida_cod = document.getElementById('salida_cod');
-    
-    salida_cod.innerHTML = entrada_codificar;
+    let espacios = entrada_codificar.toLowerCase().replaceAll(" ","?");
+    let codificado = codificarCadena(espacios);
+    salida_cod.innerHTML = codificado;
 })
 
 boton_desc.addEventListener('click',()=>{
     let entrada_descodificar = document.getElementById('descodificar').value;
     let salida_desc = document.getElementById('salida_desc');
-
-    salida_desc.innerHTML = entrada_descodificar;
+    let espacios = entrada_descodificar.toLowerCase().replaceAll("?"," ");
+    let descodificado = descodificarCadena(espacios);
+    salida_desc.innerHTML = descodificado;
 })
+
+function codificarCadena(str){
+    const secuencias = str.match(/(.)\1*/g)||[];
+    const comprimido = secuencias.map(seq=>{
+        if(seq.length>1){
+            return seq.length+seq[0];
+        } else {
+            return seq[0];
+        }
+    });
+    return comprimido.join('');
+}
+
+function descodificarCadena(str){
+    
+}
