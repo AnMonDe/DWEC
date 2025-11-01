@@ -1,4 +1,4 @@
-document.getElementById("salida").innerHTML = localStorage.contador; //Muestra en pantalla la cantidad almacenada
+document.getElementById("salida").innerHTML = localStorage.contador||0; //Muestra en pantalla la cantidad almacenada o 0
 
 function contadorClick(){ //Funcion contadora
     if (Number(localStorage.contador)>=Number.MAX_SAFE_INTEGER){ //Inicio condicional numero preciso
