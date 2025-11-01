@@ -7,7 +7,7 @@ let ano = fecha.getFullYear(); //Variable que almacena el año actual
 let faltan = fin_ano.getTime()-fecha.getTime(); //Variable que almacena la diferencia hasta fin de año
 let dias_faltan = Math.round(faltan/(1000*60*60*24)); //Variable que almacena los dias que faltan hasta fin de año
 
-boton.addEventListener('click',()=>{ //Evento que se ejecuta cuando se hace click
+boton.addEventListener('click',()=>{ //Evento que se ejecuta cuando se hace click en el boton
     let ventana = window.open("fecha","ventana","width=600 height=400"); //Variable que almacena una nueva ventana con dimensiones espedificas
     ventana.document.writeln("Hoy es " + dia + "/" + mes + "/" + ano + " y faltan " + dias_faltan + " días para fin de año"); //Texto que se muestra en la nueva ventana
 })
