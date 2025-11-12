@@ -28,8 +28,7 @@ boton.addEventListener("click",()=>{
     let precio = document.getElementById("precio").value;
 
     let resultado = filtroParametro(articulos, tipo, precio)
-    let salida = document.getElementById("salida");
-    salida.innerHTML = JSON.stringify(resultado, null, 2);
+    console.log(resultado);
 
     document.getElementById("tipo").value = "";
     document.getElementById("precio").value = "";

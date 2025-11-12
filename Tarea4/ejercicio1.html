@@ -9,15 +9,20 @@
 <body bgcolor="black" text="white" align="center">
     <h1>Busca los articulos.</h1>
     <form>
-        <label>Tipo</label>
-        <input id="tipo" type="text">
-        <p>Periféricos, Electrónica, Accesorios, Mobiliario.</p>
+        <label>Seleciona el tipo</label>
+        <select id="tipo">
+            <option>Periféricos</option>
+            <option>Electrónica</option>
+            <option>Accesorios</option>
+            <option>Mobiliario</option>
+        </select>
+        <br><br>
         <label>Precio</label>
         <input id="precio" type="number">
         <p>Como maximo.</p>
         <button id="boton" type="button">Buscar</button>
     </form>
-    <pre style="font-size:20px" id="salida"></pre>
+    <br>
     <form action="index.html">
         <input type="submit" value="Inicio"> 
     <script src="ejercicio1.js"></script>
