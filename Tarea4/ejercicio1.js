@@ -34,6 +34,11 @@ boton.addEventListener("click",()=>{
     document.getElementById("precio").value = "";
 })
 
+function buscarParametro(articulos, tipo, precio){
+    return articulos.filter(articulo => 
+        articulo.tipo===tipo && articulo.precio <= precio);
+}
+
 let boton_formato = document.getElementById("boton_formato");
 
 boton_formato.addEventListener("click",()=>{
@@ -41,11 +46,6 @@ boton_formato.addEventListener("click",()=>{
 
     console.log(descripcion);
 })
-
-function buscarParametro(articulos, tipo, precio){
-    return articulos.filter(articulo => 
-        articulo.tipo===tipo && articulo.precio <= precio);
-}
 
 function formato(articulos){
     return articulos.map(articulo =>{
