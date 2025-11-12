@@ -27,14 +27,31 @@ boton.addEventListener("click",()=>{
     let tipo = document.getElementById("tipo").value;
     let precio = document.getElementById("precio").value;
 
-    let resultado = filtroParametro(articulos, tipo, precio)
+    let resultado = buscarParametro(articulos, tipo, precio)
     console.log(resultado);
 
     document.getElementById("tipo").value = "";
     document.getElementById("precio").value = "";
 })
 
-function filtroParametro(articulos, tipo, precio){
+let boton_formato = document.getElementById("boton_formato");
+
+boton_formato.addEventListener("click",()=>{
+    let descripcion = formato(articulos);
+
+    console.log(descripcion);
+})
+
+function buscarParametro(articulos, tipo, precio){
     return articulos.filter(articulo => 
         articulo.tipo===tipo && articulo.precio <= precio);
 }
+
+function formato(articulos){
+    return articulos.map(articulo =>{
+        const descripcion = articulo.descripcion;
+        const formato = descripcion.charAt(0).toUpperCase() + descripcion.slice(1).toLowerCase();
+        return {...articulo, descripcion: formato};
+    })
+}
+
