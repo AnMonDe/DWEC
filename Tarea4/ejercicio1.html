@@ -7,8 +7,9 @@
     <title>Tarea 4 Ejercicio 1</title>
 </head>
 <body bgcolor="black" text="white" align="center">
+    <!--Ejercicio 1-->
     <form style="border:solid">
-        <h1>Busca los articulos.</h1>
+        <h1>Busca los articulos por tipo y precio.</h1>
         <label>Seleciona el tipo</label>
         <select id="tipo">
             <option>Periféricos</option>
@@ -17,15 +18,25 @@
             <option>Mobiliario</option>
         </select>
         <br><br>
-        <label>Precio</label>
+        <label>Precio maximo</label>
         <input id="precio" type="number">
-        <p>Como maximo.</p>
+        <br><br>
         <button id="boton" type="button">Buscar</button>
     </form>
+    <!--Ejercicio 2-->
     <form style="border:solid">    
-        <h1>Formatea la Descripción de los articulos.</h1>
+        <h1>Formatea la descripción de los articulos.</h1>
         <button id="boton_formato" type="button">Formato de la descripcion</button>
     </form>
+    <!--Ejercicio 3-->
+    <form style="border:solid">
+        <h1>Busca el articulo por palabra.</h1>
+        <label>Inserta la palabra para buscar</label>
+        <input id="buscar" type="text">
+        <br><br>
+        <button id="boton_buscar" type="button">Buscar</button>
+    </form>
+
     <br>
     <form action="index.html">
         <input type="submit" value="Inicio"> 

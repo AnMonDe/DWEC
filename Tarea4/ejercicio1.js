@@ -19,8 +19,8 @@ let articulos = [
     { "codigo": 18, "descripcion": "Controlador MIDI", "precio": 119.99, "tipo": "Periféricos" },
     { "codigo": 19, "descripcion": "altavoz Bluetooth Portátil", "precio": 45.99, "tipo": "Electrónica" },
     { "codigo": 20, "descripcion": "Kit de herramientas para PC", "precio": 18.99, "tipo": "Accesorios" }
-  ]
-
+]
+// Ejercicio 1
 let boton = document.getElementById("boton");
 
 boton.addEventListener("click",()=>{
@@ -39,6 +39,7 @@ function buscarParametro(articulos, tipo, precio){
         articulo.tipo===tipo && articulo.precio <= precio);
 }
 
+// Ejercicio 2
 let boton_formato = document.getElementById("boton_formato");
 
 boton_formato.addEventListener("click",()=>{
@@ -54,4 +55,8 @@ function formato(articulos){
         return {...articulo, descripcion: formato};
     })
 }
+
+// Ejercicio 3
+/*Escribe una función que reciba como parámetro el array de artículos y una cadena. 
+La función debe devolver un array con los artículos que tienen esa cadena en la descripción. */
 
