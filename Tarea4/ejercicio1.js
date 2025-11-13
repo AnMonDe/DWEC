@@ -58,8 +58,6 @@ function formato(articulos){
 }
 
 // Ejercicio 3
-/*Escribe una función que reciba como parámetro el array de artículos y una cadena. 
-La función debe devolver un array con los artículos que tienen esa cadena en la descripción. */
 let boton_buscar = document.getElementById("boton_buscar");
 
 boton_buscar.addEventListener("click",()=>{
