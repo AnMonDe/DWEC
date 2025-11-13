@@ -73,3 +73,8 @@ function buscarArticulo(articulos, cadena){
     return articulos.filter((elemento)=>
         elemento.descripcion.toLowerCase().includes(cadena));
 }
+
+// Ejercicio 4
+/*Escribe una función que recibe como parámetro el array y un tipo de artículo, 
+y devuelve un objeto con dos atributos; cantidad y preciomedio. que contendrán la 
+cantidad y el precio medio de los artículos de ese tipo.*/
