@@ -20,6 +20,7 @@ let articulos = [
     { "codigo": 19, "descripcion": "altavoz Bluetooth Portátil", "precio": 45.99, "tipo": "Electrónica" },
     { "codigo": 20, "descripcion": "Kit de herramientas para PC", "precio": 18.99, "tipo": "Accesorios" }
 ]
+
 // Ejercicio 1
 let boton = document.getElementById("boton");
 
@@ -59,4 +60,18 @@ function formato(articulos){
 // Ejercicio 3
 /*Escribe una función que reciba como parámetro el array de artículos y una cadena. 
 La función debe devolver un array con los artículos que tienen esa cadena en la descripción. */
+let boton_buscar = document.getElementById("boton_buscar");
 
+boton_buscar.addEventListener("click",()=>{
+    let palabra = document.getElementById("buscar").value;
+
+    let encontrado = buscarArticulo(articulos, palabra)
+
+    console.log(encontrado);
+    document.getElementById("buscar").value = "";
+})
+
+function buscarArticulo(articulos, cadena){
+    return articulos.filter((elemento)=>
+        elemento.descripcion.toLowerCase().includes(cadena));
+}
