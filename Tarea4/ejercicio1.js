@@ -25,6 +25,7 @@ let articulos = [
 let boton = document.getElementById("boton");
 
 boton.addEventListener("click",()=>{
+    console.clear();
     let tipo = document.getElementById("tipo").value;
     let precio = document.getElementById("precio").value;
 
@@ -44,6 +45,7 @@ function buscarParametro(articulos, tipo, precio){
 let boton_formato = document.getElementById("boton_formato");
 
 boton_formato.addEventListener("click",()=>{
+    console.clear();
     let descripcion = formato(articulos);
 
     console.log(descripcion);
@@ -61,6 +63,7 @@ function formato(articulos){
 let boton_buscar = document.getElementById("boton_buscar");
 
 boton_buscar.addEventListener("click",()=>{
+    console.clear();
     let palabra = document.getElementById("buscar").value;
 
     let encontrado = buscarArticulo(articulos, palabra)
@@ -78,6 +81,7 @@ function buscarArticulo(articulos, cadena){
 let boton_media = document.getElementById("boton_media");
 
 boton_media.addEventListener("click",()=>{
+    console.clear();
     let tipo = document.getElementById("tipo_medio").value;
     let salida = calcularMedia(articulos, tipo);
 
@@ -98,6 +102,7 @@ function calcularMedia(articulos, tipo){
 let boton_organiza = document.getElementById("boton_organiza");
 
 boton_organiza.addEventListener("click",()=>{
+    console.clear();
     let organiza = document.getElementById("organiza").value;
 
     let ordenado = organizarPrecio(articulos,organiza);
