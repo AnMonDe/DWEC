@@ -75,9 +75,6 @@ function buscarArticulo(articulos, cadena){
 }
 
 // Ejercicio 4
-/*Escribe una función que recibe como parámetro el array y un tipo de artículo, 
-y devuelve un objeto con dos atributos; cantidad y preciomedio. que contendrán la 
-cantidad y el precio medio de los artículos de ese tipo.*/
 let boton_media = document.getElementById("boton_media");
 
 boton_media.addEventListener("click",()=>{
@@ -85,6 +82,7 @@ boton_media.addEventListener("click",()=>{
     let salida = calcularMedia(articulos, tipo);
 
     console.log(salida);
+    document.getElementById("tipo_medio").value = "";
 })
 
 function calcularMedia(articulos, tipo){
@@ -93,5 +91,9 @@ function calcularMedia(articulos, tipo){
     let precioT = productos_encontrados.reduce((articulo,item)=>articulo + item.precio,0);
     let promedio = (precioT/cantidadT).toFixed(2);
     
-    return {cantidad:cantidadT,preciomedio:promedio};
+    return {"cantidad":cantidadT,"preciomedio":promedio};
 }
+
+//Ejercicio 5
+/*Escribe una función que reorganice el array de artículos según el precio, 
+en orden ascendente o descendente (según un parámetro de entrada).*/
