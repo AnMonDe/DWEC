@@ -95,5 +95,21 @@ function calcularMedia(articulos, tipo){
 }
 
 //Ejercicio 5
-/*Escribe una función que reorganice el array de artículos según el precio, 
-en orden ascendente o descendente (según un parámetro de entrada).*/
+let boton_organiza = document.getElementById("boton_organiza");
+
+boton_organiza.addEventListener("click",()=>{
+    let organiza = document.getElementById("organiza").value;
+
+    let ordenado = organizarPrecio(articulos,organiza);
+
+    console.log(ordenado);
+    document.getElementById("organiza").value = "";
+})
+
+function organizarPrecio(articulos, organiza){
+    if(organiza==="Ascendente"){
+        return articulos.sort((a,b)=>a.precio - b.precio);
+    } else{
+        return articulos.sort((a,b)=>b.precio - a.precio);
+    }
+}
