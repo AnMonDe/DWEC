@@ -78,3 +78,20 @@ function buscarArticulo(articulos, cadena){
 /*Escribe una función que recibe como parámetro el array y un tipo de artículo, 
 y devuelve un objeto con dos atributos; cantidad y preciomedio. que contendrán la 
 cantidad y el precio medio de los artículos de ese tipo.*/
+let boton_media = document.getElementById("boton_media");
+
+boton_media.addEventListener("click",()=>{
+    let tipo = document.getElementById("tipo_medio").value;
+    let salida = calcularMedia(articulos, tipo);
+
+    console.log(salida);
+})
+
+function calcularMedia(articulos, tipo){
+    let productos_encontrados = articulos.filter(articulo => articulo.tipo === tipo)
+    let cantidadT = productos_encontrados.length;
+    let precioT = productos_encontrados.reduce((articulo,item)=>articulo + item.precio,0);
+    let promedio = (precioT/cantidadT).toFixed(2);
+    
+    return {cantidad:cantidadT,preciomedio:promedio};
+}
