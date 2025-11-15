@@ -7,8 +7,7 @@ class banco{
         this.nombre = nombre;
 
         console.log(`Banco${this.nombre}`);
-        let titulo = document.getElementById("nombre");
-        titulo.innerHTML = `Banco${this.nombre}`;
+        
     }
 
     crearCuenta(codigo, saldo=0){
@@ -21,8 +20,7 @@ class banco{
 
         this.cuentas[cadena] = saldo;
         console.log(`${codigo} - ${saldo}€`);
-        let cuenta = document.getElementById("cuenta");
-        cuenta.innerHTML = `${codigo} - ${saldo}€`;
+        
     }
 
     actualizarCuenta(){
@@ -34,11 +32,22 @@ class banco{
     }
 
     listarCuenta(){
+        let titulo = document.getElementById("nombre");
+        titulo.innerHTML = `Banco${this.nombre}`;
 
+        let ul = document.getElementById("cuenta");
+        ul.innerHTML = '';
+
+        for (let codigo in this.cuentas) {
+            let li = document.createElement("li");
+            li.textContent = `${codigo} - ${this.cuentas[codigo]}€`;
+            ul.appendChild(li);
+        }
     }
 }
 
 let miBanco = new banco("Andy");
 miBanco.crearCuenta(11111,55);
-miBanco.crearCuenta(22222,33);
-miBanco.crearCuenta(33333);
+miBanco.crearCuenta(22222);
+miBanco.crearCuenta(33333,66);
+miBanco.listarCuenta();
