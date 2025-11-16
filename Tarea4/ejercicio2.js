@@ -71,11 +71,8 @@ miBanco.crearCuenta(222222);
 miBanco.crearCuenta(333333,66);
 miBanco.crearCuenta(444444, 20);
 
-miBanco.actualizarCuenta(111111,22);
 miBanco.actualizarCuenta(222222, 100);
-miBanco.actualizarCuenta(555555, -50);
 
 miBanco.eliminarCuenta(444444);
-miBanco.eliminarCuenta(555555);
 
 miBanco.listarCuenta();
