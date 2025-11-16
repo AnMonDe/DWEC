@@ -26,7 +26,7 @@ class Banco{
     actualizarCuenta(codigo, ingreso){
         let clave = codigo.toString().padStart(6, "0");
 
-        if(!this.cuentas.hasOwnProperty(clave)){
+        if(!(clave in this.cuentas)){
             console.log("La cuenta no existe");
             return;
         }
@@ -39,7 +39,7 @@ class Banco{
     eliminarCuenta(codigo){
         let clave = codigo.toString().padStart(6, "0");
 
-        if(!this.cuentas.hasOwnProperty(clave)){
+        if(!(clave in this.cuentas)){
             console.log(`La cuenta no existe`);
             return;
         }
