@@ -22,5 +22,9 @@ articulos.forEach((articulo, index) => {
 });
 
 //5. Añade la clase cabecera (ya esta declarada en los estilos), al primer div de cada artículo.
+articulos.forEach(articulo =>{
+    let primerDiv = articulo.querySelector("div");
+    primerDiv.classList.add("cabecera");
+})
 
 //6. Busca en todos los artículos donde aparece la cadena "Servicio Murciano de Salud", y sustitúyela por "S.M.S" (¿método replace de cadenas?).
