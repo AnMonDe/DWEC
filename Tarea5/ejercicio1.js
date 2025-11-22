@@ -4,11 +4,14 @@ let nombre = "Andrés Monje Delgado";
 titulo.innerText=nombre;
 
 //2. Modifica la imagen que muestra el segundo artículo artículo
-const imagen = document.querySelector(`img[src="noticia2.jpg"]`);
+let imagen = document.querySelector(`img[src="noticia2.jpg"]`);
 let nuevaImagen = "carlos.jpg";
 imagen.src = nuevaImagen;
 
 //3. Oculta el último articulo.
+let articulos = document.querySelectorAll("article");
+let ultimoArticulo = articulos[articulos.length -1];
+ultimoArticulo.style.display = "none";
 
 //4. Recorre los artículos y añade al inicio de la cabecera el número de noticia (1- Hospitalizado...)
 
