@@ -28,3 +28,8 @@ articulos.forEach(articulo =>{
 })
 
 //6. Busca en todos los artículos donde aparece la cadena "Servicio Murciano de Salud", y sustitúyela por "S.M.S" (¿método replace de cadenas?).
+articulos.forEach(articulo =>{
+    let contenido = articulo.innerHTML;
+    let contenidoNuevo = contenido.replaceAll("Servicio Murciano de Salud","S.M.S");
+    articulo.innerHTML = contenidoNuevo;
+})
