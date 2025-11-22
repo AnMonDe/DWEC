@@ -4,6 +4,9 @@ let nombre = "Andrés Monje Delgado";
 titulo.innerText=nombre;
 
 //2. Modifica la imagen que muestra el segundo artículo artículo
+const imagen = document.querySelector(`img[src="noticia2.jpg"]`);
+let nuevaImagen = "carlos.jpg";
+imagen.src = nuevaImagen;
 
 //3. Oculta el último articulo.
 
@@ -11,4 +14,4 @@ titulo.innerText=nombre;
 
 //5. Añade la clase cabecera (ya esta declarada en los estilos), al primer div de cada artículo.
 
-//6. Busca en todos los artículos donde aparece la cadena "Servicio Murciano de Salud", y sustitúyela por "S.M.S" (¿método replace de cadenas?).
+//6. Busca en todos los artículos donde aparece la cadena "Servicio Murciano de Salud", y sustitúyela por "S.M.S" (¿método replace de cadenas?).l
