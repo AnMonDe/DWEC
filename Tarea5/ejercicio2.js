@@ -16,7 +16,8 @@ for(let i=0;i<datos.length;i++){
     contenedorInterno.className = "articulo";
     contenedorInterno.innerHTML = `<h3>${datos[i].nombre}</h3>
     <p>${datos[i].descripcion}</p>
-    <p>${datos[i].precio}</p><img src="${datos[i].imagen}">`;
+    <p>${datos[i].precio}</p>
+    <img src="${datos[i].imagen}">`;
     contenedor.appendChild(contenedorInterno);
 }
 
