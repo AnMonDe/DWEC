@@ -13,8 +13,9 @@ document.body.appendChild(contenedor);
 //del array datos, que tenemos disponible en el archivo datos.js y ya se encuentra cargado en la web.
 for(let i=0;i<datos.length;i++){
     let contenedorInterno = document.createElement("div");
-    contenedorInterno.className = "resultado";
-    contenedorInterno.innerHTML = `<h3>${datos[i].nombre}</h3><p>${datos[i].descripcion}</p>
+    contenedorInterno.className = "articulo";
+    contenedorInterno.innerHTML = `<h3>${datos[i].nombre}</h3>
+    <p>${datos[i].descripcion}</p>
     <p>${datos[i].precio}</p><img src="${datos[i].imagen}">`;
     contenedor.appendChild(contenedorInterno);
 }
