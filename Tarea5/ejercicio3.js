@@ -1,4 +1,9 @@
 window.onload = function(){
+    let contenedor = document.createElement("div");
+    contenedor.id = "contenedor";
+    let boton_inicio = document.querySelector("form");
+    document.body.insertBefore(contenedor,boton_inicio);
+
     let nombre = document.createElement("input");
     nombre.id = "entrada_nombre";
     nombre.placeholder = "Nombre";
@@ -20,3 +25,7 @@ window.onload = function(){
     contenedor.appendChild(boton_del);
 
 }
+
+// 1. Se escribe un mensaje de error la página (no un alert), 
+// si pulsan añadir y eliminar y no se han rellenado ambos campos.
+
