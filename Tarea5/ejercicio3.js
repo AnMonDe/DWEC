@@ -24,8 +24,27 @@ window.onload = function(){
     boton_del.textContent = "Eliminar";
     contenedor.appendChild(boton_del);
 
-}
-
 // 1. Se escribe un mensaje de error la página (no un alert), 
 // si pulsan añadir y eliminar y no se han rellenado ambos campos.
+    let error = document.createElement("p");
+    error.id = "error";
+    document.body.insertBefore(error,boton_inicio);
+
+    boton_add.onclick = function(){
+        if(nombre.value===""||apellido.value===""){
+            error.textContent = "Error. Para Añadir introduce tu Nombre y Apellido";
+        } else{
+            error.textContent = "";
+        }
+    }
+
+    boton_del.onclick = function (){
+        if(nombre.value===""||apellido.value===""){
+            error.textContent = "Error. Para Eliminar introduce tu Nombre y Apellido"
+        } else{
+            error.textContent = "";
+        }
+    }
+}
+
 
