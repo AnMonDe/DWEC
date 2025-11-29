@@ -41,6 +41,7 @@ window.onload = function(){
 
     let tabla = document.createElement("table");
     tabla.id = "tabla";
+    tabla.style.margin = "0 auto";
     document.body.insertBefore(tabla,boton_inicio);
 
     let cabecera1 = document.createElement("th");
