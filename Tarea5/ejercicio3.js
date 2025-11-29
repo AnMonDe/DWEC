@@ -24,8 +24,15 @@ window.onload = function(){
     boton_del.textContent = "Eliminar";
     contenedor.appendChild(boton_del);
 
-    // 1. Se escribe un mensaje de error la página (no un alert), 
-    // si pulsan añadir y eliminar y no se han rellenado ambos campos.
+    //1.Se escribe un mensaje de error la página (no un alert), si pulsan añadir y eliminar y no se han rellenado ambos campos.
+
+    //2.Si pulsan añadir se crea una nueva línea en el listado en forma de tabla.
+
+    //3.Si pulsan añadir y la persona ya está en la tabla, escribimos un mensaje de error en la página.
+
+    //4.Si pulsan eliminar, eliminamos la persona de la tabla, o avisamos en caso de que no exista.
+
+    //5.Si pulsan eliminar y la persona no existe en la tabla, escribimos un mensaje de error.
     let error = document.createElement("p");
     error.id = "error";
     document.body.insertBefore(error,boton_inicio);
@@ -49,11 +56,26 @@ window.onload = function(){
             error.textContent = "";
         }
 
+        let filas = tabla.getElementsByTagName("tr");
+        for(let i = 0; i < filas.length; i++){
+            let celdas = filas[i].getElementsByTagName("td");
+            if(celdas.length > 0){
+                if(celdas[0].textContent === apellido.value){
+                    error.textContent = "Error. Ya existe esta persona";
+                    nombre.value = "";
+                    apellido.value = "";
+                    return;
+                }
+            }
+        }
+
         let fila = tabla.insertRow();
         let columna1 = fila.insertCell(0);
         let columna2 = fila.insertCell(1);
         columna1.textContent = nombre.value;
         columna2.textContent = apellido.value;
+        nombre.value = "";
+        apellido.value = "";
     }
 
     boton_del.onclick = function (){
@@ -63,10 +85,29 @@ window.onload = function(){
         } else{
             error.textContent = "";
         }
-    }
 
-    // 2. Si pulsan añadir se crea una nueva línea en el listado en forma de tabla.
-    
+        let filas = tabla.getElementsByTagName("tr");
+        let encontrado = false;
+        for(let i = 0; i < filas.length; i++){
+            let celdas = filas[i].getElementsByTagName("td");
+            if(celdas.length > 0){
+                if(celdas[0].textContent === nombre.value && celdas[1].textContent === apellido.value){
+                    tabla.deleteRow(i);
+                    encontrado = true;
+                    nombre.value = "";
+                    apellido.value = "";
+                    error.textContent = "";
+                    return;
+                }
+            }
+        }
+
+        if(encontrado === false){
+            error.textContent = "Eror. No existe esta persona";
+            nombre.value = "";
+            apellido.value = "";
+        }
+    }
 
 
 }
