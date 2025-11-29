@@ -24,7 +24,8 @@ window.onload = function(){
     boton_del.textContent = "Eliminar";
     contenedor.appendChild(boton_del);
 
-    //1.Se escribe un mensaje de error la página (no un alert), si pulsan añadir y eliminar y no se han rellenado ambos campos.
+    //1.Se escribe un mensaje de error la página (no un alert), 
+    // si pulsan añadir y eliminar y no se han rellenado ambos campos.
 
     //2.Si pulsan añadir se crea una nueva línea en el listado en forma de tabla.
 
@@ -108,8 +109,6 @@ window.onload = function(){
             apellido.value = "";
         }
     }
-
-
 }
 
 
