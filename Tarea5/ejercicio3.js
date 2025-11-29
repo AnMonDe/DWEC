@@ -1,3 +1,4 @@
+// Añado elementos al DOM cuando carga la pagina.
 window.onload = function(){
     let contenedor = document.createElement("div");
     contenedor.id = "contenedor";
