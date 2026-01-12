@@ -1,0 +1,31 @@
+body{
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+div{
+    border: solid;
+    border-color: red;
+    border-radius: 5px;
+}
+#cabecera{
+    width: 500px;
+    padding: 5px;
+
+}
+#numeros{
+    width: 500px;
+    height: 400px;
+}
+#sorteo{
+    width: 500px;
+    height: 50px;
+}
+#salida{
+    width: 500px;
+    height: 5px;
+}
