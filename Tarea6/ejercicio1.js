@@ -7,7 +7,7 @@ let exterior = document.createElement("div")
 exterior.id = "exterior"
 document.body.appendChild(exterior)
 
-entrada = document.createElement("entrada")
+entrada = document.createElement("input")
 entrada.id = "entrada"
 entrada.type = "password"
 exterior.appendChild(entrada)
@@ -30,16 +30,42 @@ let borrar = document.createElement("button")
 borrar.textContent = "C"
 borrar.className = "accion"
 borrar.id = "borrar"
-//borrar.onclick = borrarN
+borrar.onclick = borrarN
 teclado.appendChild(borrar)
 
 let validar = document.createElement("button")
 validar.textContent = "VALIDAR"
 validar.className = "accion"
 validar.id = "validar"
-//validar.onclick = validarN
+validar.onclick = validarN
 teclado.appendChild(validar)
 
 salida = document.createElement("div")
 salida.id = "mensaje"
 exterior.appendChild(salida)
+
+function agregarN(numero){
+    entrada.value += numero
+    salida.textContent = ""
+}
+
+function borrarN(){
+    entrada.value = entrada.value.slice(0, -1)
+    salida.textContent = ""
+}
+
+function validarN(){
+    let valor = entrada.value
+    let patron = /^9999$/
+
+    if (valor.length !== 4){
+        salida.textContent = "No has introducido 4"
+        return
+    }
+
+    if (patron.test(valor)){
+        salida.textContent = "Contraseña correcta"
+    } else {
+        salida.textContent = "Contraseña incorrecta"
+    }
+}
