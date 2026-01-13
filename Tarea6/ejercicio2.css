@@ -18,8 +18,17 @@ div{
 
 }
 #numeros{
-    width: 500px;
-    height: 400px;
+    width: 480px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    padding: 15px;
+}
+#numeros button{
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: white;
 }
 #sorteo{
     width: 500px;
