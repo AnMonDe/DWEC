@@ -13,10 +13,17 @@ sorteo.id = "sorteo"
 //funcion generar numero aleatorios y boton
 document.body.appendChild(sorteo)
 
+let enviar = document.createElement("button")
+enviar.innerHTML = "Realizar<br>sorteo"
+enviar.id = "enviar"
+sorteo.appendChild(enviar)
+
 let salida = document.createElement("div")
 salida.id = "salida"
-//salida.textContent = `Has tenido ${aciertos} aciertos.`
 document.body.appendChild(salida)
+
+salida.innerHTML = `Has tenido ${aciertos} aciertos.`
+
 
 function botones(){
     for(let i = 1 ; i <= 50; i++){

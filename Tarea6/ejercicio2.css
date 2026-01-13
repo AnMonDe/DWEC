@@ -31,10 +31,17 @@ div{
     border-color: white;
 }
 #sorteo{
-    width: 500px;
-    height: 50px;
+    width: 490px;
+    height: 40px;
+    gap: 10px;
+    padding: 10px;
 }
 #salida{
-    width: 500px;
+    width: 510px;
     height: 5px;
+}
+#enviar{
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: white;
 }
