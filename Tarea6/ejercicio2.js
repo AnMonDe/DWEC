@@ -10,20 +10,17 @@ document.body.appendChild(numeros)
 
 let sorteo = document.createElement("div")
 sorteo.id = "sorteo"
-//funcion generar numero aleatorios y boton
 document.body.appendChild(sorteo)
 
 let enviar = document.createElement("button")
 enviar.innerHTML = "Realizar<br>sorteo"
 enviar.id = "enviar"
 sorteo.appendChild(enviar)
+//funcion generar numero aleatorios
 
 let salida = document.createElement("div")
 salida.id = "salida"
 document.body.appendChild(salida)
-
-salida.innerHTML = `Has tenido ${aciertos} aciertos.`
-
 
 function botones(){
     for(let i = 1 ; i <= 50; i++){
@@ -32,3 +29,21 @@ function botones(){
         numeros.appendChild(boton)
     }
 }
+
+document.addEventListener("click", function(event){
+    if (event.target.parentElement.id === "numeros") {
+        let numero = event.target.textContent;
+        let seleccionado = sorteo.querySelector(`button[dato="${numero}"]`)
+
+        if (seleccionado) {
+            seleccionado.remove()
+        } 
+        else if (sorteo.querySelectorAll('button[dato]').length < 6) {
+            let seleccion = document.createElement("button")
+            seleccion.textContent = numero
+            seleccion.setAttribute("dato", numero)
+            seleccion.id = "seleccion"
+            sorteo.appendChild(seleccion)
+        }
+    }
+});
