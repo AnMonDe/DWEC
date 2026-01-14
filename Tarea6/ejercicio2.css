@@ -1,4 +1,4 @@
-body{
+body {
     background-color: black;
     color: white;
     align-items: center;
@@ -6,52 +6,83 @@ body{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    font-family: Arial, sans-serif;
 }
-div{
+
+div {
     border: solid;
     border-color: red;
     border-radius: 5px;
 }
-#cabecera{
+
+#cabecera {
     width: 500px;
     padding: 5px;
-
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
 }
-#numeros{
+
+#numeros {
     width: 480px;
-    height: 300px;
+    height: auto; 
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     padding: 15px;
 }
-#numeros button{
+
+#numeros button {
     font-size: 16px;
     border-radius: 5px;
-    border-color: white;
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
 }
-#sorteo{
+
+#numeros button.seleccionado {
+    background-color: red;
+    font-weight: bold;
+}
+
+#sorteo {
     width: 490px;
-    height: auto; 
-    min-height: 60px; 
-    display: flex; 
-    justify-content:left; 
-    align-items: center; 
-    gap: 10px;
+    height: auto;
+    min-height: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
     padding: 10px;
 }
-#salida{
-    width: 510px;
-    height: 5px;
+
+.resultado {
+    background-color: white;
+    color: black;
+    border: 1px solid red;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
 }
-#enviar{
-    font-size: 16px;
+
+#salida {
+    width: 490px;
+    height: auto;
+    padding: 10px;
+}
+
+#enviar {
+    font-size: 14px;
     border-radius: 5px;
     border-color: white;
-}
-#seleccion{
-    font-size: 16px;
-    border-radius: 5px;
-    border-color: white;
-    padding: 10px 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: black;
 }

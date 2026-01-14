@@ -2,7 +2,6 @@ let valor = ""
 let entrada
 let salida
 
-
 let exterior = document.createElement("div")
 exterior.id = "exterior"
 document.body.appendChild(exterior)
