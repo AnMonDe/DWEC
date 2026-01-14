@@ -75,6 +75,7 @@ div {
     width: 490px;
     height: auto;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 #enviar {
