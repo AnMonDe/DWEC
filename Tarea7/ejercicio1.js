@@ -1,7 +1,11 @@
 let url = "https://jsonplaceholder.typicode.com/users"
+let todo = []
+
 fetch(url)
     .then(respuesta => respuesta.json())
-    .then(datos => mostrarDatos(datos))
+    .then(datos => {todo = datos
+    mostrarDatos(todo)})
+
     //.then(datos => console.log(datos))
 
 let boton = document.getElementById("buscar")
@@ -9,6 +13,11 @@ let boton = document.getElementById("buscar")
 boton.addEventListener("click",()=>{
     let entrada = document.getElementById("entrada").value
 
+    let resultado = todo.filter(user => user.name.includes(entrada))
+
+    document.getElementById("tabla").innerHTML=""
+
+    mostrarDatos(resultado)
 })
 
 function mostrarDatos(datos){
