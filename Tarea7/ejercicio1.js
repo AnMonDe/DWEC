@@ -5,7 +5,6 @@ fetch(url)
     .then(respuesta => respuesta.json())
     .then(datos => {todo = datos
     mostrarDatos(todo)})
-
     //.then(datos => console.log(datos))
 
 let boton = document.getElementById("buscar")
