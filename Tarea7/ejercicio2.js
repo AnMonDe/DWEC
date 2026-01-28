@@ -1,5 +1,5 @@
-let informacion = "http://api.raulserranoweb.es/rest.php"
-let imagenes = "http://api.raulserranoweb.es/imagenes_art/"
+let informacion = "https://api.raulserranoweb.es/rest.php"
+let imagenes = "https://api.raulserranoweb.es/imagenes_art/"
 let pagina = document.getElementById("salida")
 let tipo = document.getElementById("tipo")
 
