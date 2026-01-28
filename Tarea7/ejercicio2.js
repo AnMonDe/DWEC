@@ -4,7 +4,7 @@ let pagina = document.getElementById("salida")
 let tipo = document.getElementById("tipo")
 
 function cargar(categoria){
-    let url =informacion
+    let url = informacion
 
     if(categoria && categoria !== "Todas"){
         url += `?cat=${categoria}`
@@ -19,11 +19,14 @@ function cargar(categoria){
         for(let i = 0; i < datos.length; i++){
             let seccion = document.createElement("div")
             let imagen = imagenes + datos[i].cod
+
             seccion.className = "seccion"
-            seccion.innerHTML = `<img src="${imagen}" <br>
-            Nombre: ${datos[i].nom} <br>
-            Descripcion: ${datos[i].des} <br>
-            Categoria: ${datos[i].cat}`
+
+            seccion.innerHTML = `<img src="${imagen}" <br> <hr>
+            <strong>Nombre:</strong> ${datos[i].nom} <br>
+            <strong>Descripcion:</strong> ${datos[i].des} <br>
+            <strong>Categoria:</strong> ${datos[i].cat}`
+
             pagina.appendChild(seccion)
         }
     })
