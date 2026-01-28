@@ -6,7 +6,7 @@ let tipo = document.getElementById("tipo")
 function cargar(categoria){
     let url =informacion
 
-    if(categoria !== "Todas"){
+    if(categoria && categoria !== "Todas"){
         url += `?cat=${categoria}`
     }
 
