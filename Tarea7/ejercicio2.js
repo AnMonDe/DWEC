@@ -30,6 +30,7 @@ function cargar(categoria){
             pagina.appendChild(seccion)
         }
     })
+    .catch(error => console.error("Error cargando datos:", error));
 }
 
 cargar()
