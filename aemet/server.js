@@ -80,28 +80,54 @@ app.get('/api/usuarios', async (req, res) => {
 });
 
 // EJEMPLO 3: Endpoint con parámetros dinámicos
-app.get('/api/usuario/:id', async (req, res) => {
+app.get('/api/prediccion/:codigo', async (req, res) => {
   try {
-    const { id } = req.params;
+    const { codigo } = req.params;
     
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-    
-    if (!response.ok) {
-      throw new Error(`Error HTTP: ${response.status}`);
+    const API_KEY = process.env.AEMET_API_KEY;
+
+    if (!API_KEY) {
+        throw new Error("Falta la API Key de AEMET en el archivo .env");
     }
     
-    const usuario = await response.json();
+    const urlAemet = `https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/${codigo}?api_key=${API_KEY}`;
     
-    res.json({
-      success: true,
-      data: usuario
-    });
+    const response = await fetch(urlAemet);
+    
+    if (!response.ok) {
+      throw new Error(`Error HTTP AEMET (Paso 1): ${response.status}`);
+    }
+    
+    const dataInicial = await response.json();
+
+    if (dataInicial.datos) {
+        const datosResponse = await fetch(dataInicial.datos);
+        
+        if (!datosResponse.ok) {
+            throw new Error(`Error HTTP AEMET (Paso 2): ${datosResponse.status}`);
+        }
+
+        const meteorologia = await datosResponse.json();
+        
+        res.json({
+            success: true,
+            origen: 'AEMET',
+            data: meteorologia
+        });
+    } else {
+        res.status(404).json({
+            success: false,
+            error: 'No se encontraron datos o el código es incorrecto',
+            aemet_msg: dataInicial
+        });
+    }
     
   } catch (error) {
     console.error('Error:', error.message);
     res.status(500).json({
       success: false,
-      error: 'Error al obtener el usuario'
+      error: 'Error al obtener la predicción de AEMET',
+      detalles: error.message
     });
   }
 });
