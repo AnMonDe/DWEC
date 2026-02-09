@@ -95,7 +95,7 @@ app.get('/api/prediccion/:codigo', async (req, res) => {
     const response = await fetch(urlAemet);
     
     if (!response.ok) {
-      throw new Error(`Error HTTP AEMET (Paso 1): ${response.status}`);
+      throw new Error(`Error: ${response.status}`);
     }
     
     const dataInicial = await response.json();
@@ -104,7 +104,7 @@ app.get('/api/prediccion/:codigo', async (req, res) => {
         const datosResponse = await fetch(dataInicial.datos);
         
         if (!datosResponse.ok) {
-            throw new Error(`Error HTTP AEMET (Paso 2): ${datosResponse.status}`);
+            throw new Error(`Error: ${datosResponse.status}`);
         }
 
         const meteorologia = await datosResponse.json();
