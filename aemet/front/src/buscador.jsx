@@ -3,7 +3,7 @@ const { useState } = require("react");
 function Buscador(onBuscar){
     const [codigo, setCodigo] = useState('')
 
-    const handleSUBMIT = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         if(!codigo.trim()) return
         onBuscar(codigo)
