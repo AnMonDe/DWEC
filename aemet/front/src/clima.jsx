@@ -19,8 +19,8 @@ function Clima({datos}){
                 </div>
                 <div className = "detalle-tiempo">
                     <h3>Temperatura</h3>
-                    <p>Mínima: {prediccionHoy.temperatura.min}ºC</p>
-                    <p>Máxima: {prediccionHoy.temperatura.max}ªC</p>
+                    <p>Mínima: {prediccionHoy.temperatura.minima}ºC</p>
+                    <p>Máxima: {prediccionHoy.temperatura.maxima}ºC</p>
                 </div>
                 <div className = "detalle-tiempo">
                     <h3>Viento</h3>
