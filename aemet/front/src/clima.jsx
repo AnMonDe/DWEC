@@ -1,4 +1,6 @@
 function Clima({datos}){
+    if(!datos || datos.length ===0) return null
+
     const prediccionHoy = datos[0]?.prediccion?.dia[0]
     const municipioNombre = datos[0]?.nombre
     const provinciaNombre = datos[0]?.provincia
@@ -13,7 +15,7 @@ function Clima({datos}){
             <div className = "detalles-tiempo">
                 <div className = "detalle-tiempo">
                     <h3>Estado del Cielo</h3>
-                    <p>{prediccionHoy.estadoCielo[0]?.descipcion}</p>
+                    <p>{prediccionHoy.estadoCielo[0]?.descripcion}</p>
                 </div>
                 <div className = "detalle-tiempo">
                     <h3>Temperatura</h3>

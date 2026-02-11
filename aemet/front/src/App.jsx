@@ -1,34 +1,54 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Buscador from './buscador'
+import Clima from './clima'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App(){
+  const [wheatherData, setWeatherData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+
+  const buscarClima = async (codigo) => {
+    setLoading(true)
+    setError(null)
+    setWeatherData(null)
+
+    try {
+      const respuesta = await fetch(`http://localhost:3000/api/prediccion/${codigo}`)
+
+      if(!respuesta.ok) {
+        if(respuesta.status === 404)
+          throw new Error("Municipio no encontrado.")
+      }
+
+      const resultado = await respuesta.json()
+
+      if(resultado.success && resultado.data) {
+        setWeatherData(resultado.data)
+      } else {
+        throw new Error("Formato de datos incorrecto")
+      }
+
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+  <div className = "contenedor">
+    <header>
+      <h1>Meteorología</h1>
+    </header>
+    <main>
+      <Buscador onBuscar = {buscarClima}/>
+      {}
+      {loading && <div className = "cargando">Cargando datos ...</div>}
+      {error && <div className = "error">{error}</div>}
+      <Clima datos = {wheatherData}/>
+      {!wheatherData && !loading && <p className = "posicion">Introduce un código de municipio</p>}
+    </main>
+  </div>
   )
 }
 

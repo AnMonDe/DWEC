@@ -1,6 +1,6 @@
-const { useState } = require("react");
+import { useState } from "react"
 
-function Buscador(onBuscar){
+function Buscador({onBuscar}){
     const [codigo, setCodigo] = useState('')
 
     const handleSubmit = (e) => {
@@ -11,7 +11,7 @@ function Buscador(onBuscar){
 
     return (
         <div className = "buscar">
-            <form onsSubmit = {handleSubmit}>
+            <form onSubmit = {handleSubmit}>
                 <input type = "text" placeholder = "Introduce el código postal." 
                 value = {codigo} onChange = {(e) => setCodigo(e.target.value)}/>
                 <button type = "submit">Buscar</button>
