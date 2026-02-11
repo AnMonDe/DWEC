@@ -7,10 +7,13 @@ function Clima({datos}){
 
     if(!prediccionHoy) return null
 
+    const estadoCieloActual = prediccionHoy.estadoCielo.find(e => e.descripcion)
+
     return(
         <div className = "tiempo">
             <h2>{municipioNombre} ({provinciaNombre})</h2>
-            <p>Fecha: {prediccionHoy.fecha}</p>
+            {}
+            <p>Fecha: {new Date(prediccionHoy.fecha).toLocaleDateString()}</p>
 
             <div className = "detalles-tiempo">
                 <div className = "detalle-tiempo">
