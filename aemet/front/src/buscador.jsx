@@ -12,7 +12,7 @@ function Buscador({onBuscar}){
     return (
         <div className = "buscar">
             <form onSubmit = {handleSubmit}>
-                <input type = "text" placeholder = "Introduce el código postal." 
+                <input type = "text" placeholder = "Introduce el código del Municipio." 
                 value = {codigo} onChange = {(e) => setCodigo(e.target.value)}/>
                 <button type = "submit">Buscar</button>
             </form>

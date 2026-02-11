@@ -18,7 +18,8 @@ function Clima({datos}){
             <div className = "detalles-tiempo">
                 <div className = "detalle-tiempo">
                     <h3>Estado del Cielo</h3>
-                    <p>{prediccionHoy.estadoCielo[0]?.descripcion}</p>
+                    {}
+                    <p>{estadoCieloActual?.descripcion}</p>
                 </div>
                 <div className = "detalle-tiempo">
                     <h3>Temperatura</h3>
