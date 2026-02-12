@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Buscador from './buscador'
 import Clima from './clima'
+import './App.css'
 
 function App(){
   const [wheatherData, setWeatherData] = useState(null)
@@ -38,7 +39,7 @@ function App(){
   return (
   <div className = "contenedor">
     <header>
-      <h1>Meteorología</h1>
+      <h1>Meteorología.</h1>
     </header>
     <main>
       <Buscador onBuscar = {buscarClima}/>
@@ -46,7 +47,6 @@ function App(){
       {loading && <div className = "cargando">Cargando datos ...</div>}
       {error && <div className = "error">{error}</div>}
       <Clima datos = {wheatherData}/>
-      {!wheatherData && !loading && <p className = "posicion">Introduce un código de municipio</p>}
     </main>
   </div>
   )
