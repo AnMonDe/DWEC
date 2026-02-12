@@ -94,6 +94,7 @@ button:hover {
   grid-template-columns: 1fr 1fr; 
   gap: 15px;
   margin-top: 25px;
+  text-align: center;
 }
 
 .detalle-tiempo {
@@ -103,7 +104,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center; 
-  align-items: flex-start; 
+  align-items: center; 
   transition: transform 0.2s;
   min-height: 100px; 
 }
