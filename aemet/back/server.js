@@ -106,8 +106,11 @@ app.get('/api/prediccion/:codigo', async (req, res) => {
         if (!datosResponse.ok) {
             throw new Error(`Error: ${datosResponse.status}`);
         }
-
-        const meteorologia = await datosResponse.json();
+        
+        const bufer = await datosResponse.arrayBuffer()
+        const decodificacion = new TextDecoder('iso-8859-1')
+        const texto = decodificacion.decode(bufer)
+        const meteorologia = JSON.parse(texto)
         
         res.json({
             success: true,
