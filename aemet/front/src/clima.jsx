@@ -16,8 +16,18 @@ function Clima({datos}){
 
     return(
         <div className = "tiempo">
+            <h2>{municipioNombre} ({provinciaNombre})</h2>
             {}
-            
+            <p>Fecha: {new Date(prediccionHoy.fecha).toLocaleDateString()}</p>
+            <div className="resumen-clima">
+                {}
+                {}
+                <Iconos descripcion={descripcionCielo} />
+                
+                <p className='descripcion'>
+                    {descripcionCielo}
+                </p>
+            </div>
             <div className = "detalles-tiempo">
                 <div className = "detalle-tiempo">
                     <h3>Temperatura</h3>
