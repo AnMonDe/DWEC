@@ -4,53 +4,90 @@ function Clima({datos}){
     if(!datos || datos.length === 0) return null
 
     const prediccionHoy = datos[0]?.prediccion?.dia[0]
+    const prediccionMañana = datos[0]?.prediccion?.dia[1]
+
     const municipioNombre = datos[0]?.nombre
     const provinciaNombre = datos[0]?.provincia
 
     if(!prediccionHoy) return null
     
-    const vientoActual = prediccionHoy.viento.find(v => v.direccion && v.velocidad) || prediccionHoy.viento[0]
-    const lluvia = Math.max(...prediccionHoy.probPrecipitacion.map(p => p.value || 0));
-    const estadoCieloActual = prediccionHoy.estadoCielo.find(e => e.descripcion)
-    const descripcionCielo = estadoCieloActual?.descripcion
+    const vientoHoy = prediccionHoy.viento.find(v => v.direccion && v.velocidad) || prediccionHoy.viento[0]
+    const vientoMañana = prediccionMañana.viento.find(v => v.direccion && v.velocidad) || prediccionMañana.viento[0]
+
+    const lluviaHoy = Math.max(...prediccionHoy.probPrecipitacion.map(p => p.value || 0));
+    const lluviaMañana = Math.max(...prediccionMañana.probPrecipitacion.map(p => p.value || 0));
+
+    const estadoCieloHoy = prediccionHoy.estadoCielo.find(e => e.descripcion)
+    const descripcionCieloHoy = estadoCieloHoy?.descripcion
+
+    const estadoCieloMañana = prediccionMañana.estadoCielo.find(e => e.descripcion)
+    const descripcionCieloMañana = estadoCieloMañana?.descripcion
 
     return(
-        <div className = "tiempo">
+        <><div className="tiempo">
             <h2>{municipioNombre} ({provinciaNombre})</h2>
-            {}
-            <p>Fecha: {new Date(prediccionHoy.fecha).toLocaleDateString()}</p>
+
+            <p>Predicción para hoy, {new Date(prediccionHoy.fecha).toLocaleDateString()}</p>
             <div className="resumen-clima">
-                {}
-                {}
-                <Iconos descripcion={descripcionCielo} />
-                
+
+                <Iconos descripcion={descripcionCieloHoy
+            
+                } />
+
                 <p className='descripcion'>
-                    {descripcionCielo}
+                    {descripcionCieloHoy
+            }
                 </p>
             </div>
-            <div className = "detalles-tiempo">
-                <div className = "detalle-tiempo">
+            <div className="detalles-tiempo">
+                <div className="detalle-tiempo">
                     <h3>Temperatura</h3>
                     <p>Mínima: {prediccionHoy.temperatura.minima}ºC</p>
                     <p>Máxima: {prediccionHoy.temperatura.maxima}ºC</p>
                 </div>
-                <div className = "detalle-tiempo">
+                <div className="detalle-tiempo">
                     <h3>Lluvia</h3>
-                    {}
-                    <p>Probabilidad: {lluvia}%</p>
+                    <p>Probabilidad: {lluviaHoy}%</p>
                 </div>
-                <div className = "detalle-tiempo">
+                <div className="detalle-tiempo">
                     <h3>Viento</h3>
-                    {}
-                    <p>{vientoActual?.velocidad} km/h</p>
+                    <p>{vientoHoy?.velocidad} km/h</p>
                 </div>
-                <div className = "detalle-tiempo">
+                <div className="detalle-tiempo">
                     <h3>Direccion</h3>
-                    {}
-                    <p>{vientoActual?.direccion}</p>
+                    <p>{vientoHoy?.direccion}</p>
                 </div>
             </div>
         </div>
+        <div className="tiempo">
+            <h2>{municipioNombre} ({provinciaNombre})</h2>
+            <p>Predicción para mañana, {new Date(prediccionMañana.fecha).toLocaleDateString()}</p>
+            <div className="resumen-clima">
+                <Iconos descripcion={descripcionCieloMañana} />
+                <p className='descripcion'>
+                    {descripcionCieloMañana}
+                </p>
+            </div>
+            <div className="detalles-tiempo">
+                <div className="detalle-tiempo">
+                    <h3>Temperatura</h3>
+                    <p>Mínima: {prediccionMañana.temperatura.minima}ºC</p>
+                    <p>Máxima: {prediccionMañana.temperatura.maxima}ºC</p>
+                </div>
+                <div className="detalle-tiempo">
+                    <h3>Lluvia</h3>
+                    <p>Probabilidad: {lluviaMañana}%</p>
+                </div>
+                <div className="detalle-tiempo">
+                    <h3>Viento</h3>
+                    <p>{vientoMañana?.velocidad} km/h</p>
+                </div>
+                <div className="detalle-tiempo">
+                    <h3>Direccion</h3>
+                    <p>{vientoMañana?.direccion}</p>
+                </div>
+            </div>
+        </div></>
     )
 }
 export default Clima
