@@ -43,7 +43,6 @@ function App(){
     </header>
     <main>
       <Buscador onBuscar = {buscarClima}/>
-      {}
       {loading && <div className = "cargando">Cargando datos ...</div>}
       {error && <div className = "error">{error}</div>}
       <Clima datos = {wheatherData}/>
